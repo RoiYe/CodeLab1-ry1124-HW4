@@ -9,9 +9,10 @@ public class HighScores : MonoBehaviour
     public Text highScoreText;
 
     string highScoreTemplate = 
-        "Your Score: \n" + 
+        "Game clear!!!\n\n" +
+        "Your Time \n" + 
         "<score>\n\n" +
-        "High Score:\n" +
+        "Shortest Time\n" +
         "<highScores>";
 
     // Start is called before the first frame update
@@ -19,7 +20,7 @@ public class HighScores : MonoBehaviour
     {
         GameManager.instance.UpdateHighScores();
 
-        string displayText = highScoreTemplate.Replace("<score>", GameManager.instance.timer + "");
+        string displayText = highScoreTemplate.Replace("<score>", (int)GameManager.instance.timer + "");
 
         string highScoreString = "";
 
@@ -27,7 +28,7 @@ public class HighScores : MonoBehaviour
         List<float>  hsNums  = GameManager.instance.highScoreNums;
 
         for (int i = 0; i < hsNames.Count; i++){
-            highScoreString += hsNames[i] + " " + hsNums[i] + "\n";
+            highScoreString += hsNames[i] + " " + (int)hsNums[i] + "\n";
         }
 
         displayText = displayText.Replace("<highScores>", highScoreString);

@@ -11,7 +11,7 @@ public class PrizeScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        targetScore = GameManager.instance.Score * 2 + 5; //increase the target score every level
+        targetScore = GameManager.instance.Score * 2; //increase the target score every level
     }
 
     // Update is called once per frame

@@ -86,7 +86,8 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime; //increase the timer by deltaTime every frame
-        infoText.text = "Score: " + score + " Time: " + (int)timer; //update the text component with the score and time
+        infoText.text = "Time: " + (int)timer; //update the text component with the score(time)
+        //infoText.text = "Score: " + score + " Time: " + (int)timer; //update the text component with the score and time
     }
 
     public void UpdateHighScores()
@@ -98,7 +99,7 @@ public class GameManager : MonoBehaviour
         {
             if (highScoreNums[i] > timer)
             {
-                highScoreNums.Insert(i, timer);
+                highScoreNums.Insert(i, (int)timer);
                 highScoreNames.Insert(i, "NEW");
                 newScore = true; //we have a new high score
                 break;
